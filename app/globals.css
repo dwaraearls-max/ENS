@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  --foreground: #0c1912;
+  --ens-emerald: #065f46;
+  --ens-emerald-light: #047857;
+  --ens-gold: #b45309;
+  --ens-gold-soft: #d97706;
+  --ens-card: #ffffff;
+  --pattern-opacity: 0.04;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--ens-emerald);
+  color: white;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--ens-gold-soft);
+  outline-offset: 2px;
+}
+
+.pattern-bg {
+  background-image: url("/pattern.svg");
+  background-repeat: repeat;
+  background-size: 120px 120px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ens-emerald-light);
+  outline-offset: 2px;
+}
+
+/* Hero ambience — subtle, respects reduced motion */
+@keyframes hero-aurora {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translate(1%, -1%) scale(1.02);
+  }
+}
+
+.hero-aurora {
+  animation: hero-aurora 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora {
+    animation: none;
+  }
+}
+
+.hero-glow-radial {
+  background: radial-gradient(
+    ellipse 80% 70% at 15% 45%,
+    rgba(6, 95, 70, 0.72) 0%,
+    rgba(6, 95, 70, 0.35) 45%,
+    transparent 72%
+  );
+}
+
+.hero-glow-gold {
+  background: radial-gradient(
+    ellipse 50% 40% at 92% 12%,
+    rgba(217, 119, 6, 0.22) 0%,
+    transparent 65%
+  );
+}
+
+.hero-vignette {
+  background: radial-gradient(
+    ellipse 120% 90% at 50% 50%,
+    transparent 40%,
+    rgba(2, 44, 34, 0.55) 100%
+  );
+}
+
+.hero-mesh {
+  background-image: linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 42%,
+      transparent 58%,
+      rgba(217, 119, 6, 0.06) 100%
+    ),
+    url("/pattern.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 120px 120px;
+  background-position: center, center;
+}

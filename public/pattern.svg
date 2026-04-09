@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" fill="transparent"/>
+  <circle cx="60" cy="60" r="28" stroke="#065f46" stroke-width="1.2" opacity="0.35"/>
+  <path d="M60 32v56M32 60h56" stroke="#b45309" stroke-width="0.9" opacity="0.3"/>
+  <circle cx="60" cy="60" r="8" stroke="#065f46" stroke-width="0.8" opacity="0.25"/>
+  <path d="M20 20l8 8m64-8l-8 8M20 100l8-8m64 8l-8-8" stroke="#065f46" stroke-width="0.6" opacity="0.2"/>
+</svg>
